@@ -1,0 +1,40 @@
+<%- include('../partials/header'); -%>
+<title>Invoice History | VIT Pharmacy</title>
+
+</head>
+
+<body>
+<%- include('../partials/navbar'); -%>
+
+<div class="container-fluid">
+  <div class="row">
+    <%- include('../partials/patsidebar'); -%>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="container-fluid">
+          <br>
+          <div class="table-responsive">
+            <h2>Medicine History</h2>
+            <table class="table table-striped table-bordered table-hover" id="myTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Medicine Name</th>
+                  <th>Date of purchase</th>
+                  <th>Quantity Purchased</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% rows.forEach(function(bill){ %>
+                  <tr>
+                    <td><%= bill.med_name %></td>
+                    <td><%= bill.bill_date %></td>
+                    <td><%= bill.quantity %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+        </div>
+        </div>
+        </main>
+  </div>
+</div>
+</body>
